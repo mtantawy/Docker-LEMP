@@ -20,10 +20,14 @@ RUN apt-get install -y \
     php7.1 \
     php7.1-cli \
     php7.1-fpm \
+    php7.1-zip \
+    php7.1-mysql \
     mysql-server-5.7 \
     mysql-client-5.7 \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+RUN echo 'sql-mode = "ONLY_FULL_GROUP_BY,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION"' >> /etc/mysql/mysql.conf.d/mysqld.cnf
 
 COPY ./nginxDefault /etc/nginx/conf.d/default.conf
 COPY ./nginxConf /etc/nginx/nginx.conf
