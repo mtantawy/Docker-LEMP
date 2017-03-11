@@ -29,9 +29,7 @@ RUN apt-get install -y \
 
 RUN echo 'sql-mode = "ONLY_FULL_GROUP_BY,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION"' >> /etc/mysql/mysql.conf.d/mysqld.cnf
 
-COPY ./nginxDefault /etc/nginx/conf.d/default.conf
-COPY ./nginxConf /etc/nginx/nginx.conf
-COPY ./fastcgi_params /etc/nginx/fastcgi_params
+COPY ./nginx /etc/nginx
 COPY ./docker-run.sh /docker-run.sh
 
 VOLUME ["/var/lib/mysql", "/var/www/html"]
