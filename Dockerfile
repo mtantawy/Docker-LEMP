@@ -32,8 +32,8 @@ RUN echo 'sql-mode = "ONLY_FULL_GROUP_BY,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUT
 COPY ./nginx /etc/nginx
 COPY ./docker-run.sh /docker-run.sh
 
-VOLUME ["/var/lib/mysql", "/var/www/html"]
+VOLUME ["/var/lib/mysql", "/var/www/html", "/etc/nginx/ssl"]
 
-EXPOSE 80
+EXPOSE 80 443
 
 CMD ["/bin/bash", "docker-run.sh"]
