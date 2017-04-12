@@ -8,6 +8,7 @@ ENV MYSQL_ALLOW_EMPTY_PASSWORD=yes
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ABF5BD827BD9BF62 \
     && echo 'deb http://nginx.org/packages/ubuntu/ xenial nginx' >> /etc/apt/sources.list.d/nginx.list \
     && apt-get update \
+    && apt-get install locales \
     && locale-gen en_US.UTF-8 \
     && export LANG=en_US.UTF-8 \
     && apt-get install -y software-properties-common \
