@@ -4,6 +4,7 @@ LABEL maintainer "me@mtantawy.com"
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV MYSQL_ALLOW_EMPTY_PASSWORD=yes
+ENV DOMAIN=SSL_DOMAIN
 
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ABF5BD827BD9BF62 \
     && echo 'deb http://nginx.org/packages/mainline/ubuntu/ xenial nginx' >> /etc/apt/sources.list.d/nginx.list \

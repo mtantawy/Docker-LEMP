@@ -9,6 +9,9 @@ nginx -v
 echo "mysql -V";
 mysql -V
 
+echo "preparing nginx default_site.conf file"
+sed -i "s/DOMAIN/$DOMAIN/" /etc/nginx/default_site.conf
+
 echo "will start php";
 service php7.1-fpm start
 echo "php status below";
